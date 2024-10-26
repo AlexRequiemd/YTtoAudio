@@ -1,14 +1,16 @@
 
-# ![logo1](https://github.com/user-attachments/assets/4fad5aaa-ca9e-4abb-8c0a-c3406a1fd790)
+# ![logo1](https://github.com/user-attachments/assets/e1a85956-8682-4dfd-ab1d-d6417ca665ec)
 
 [![Python](https://img.shields.io/badge/python-3670A0?style=for-the-badge&logo=python&logoColor=ffdd54)](https://www.python.org/)
 [![MIT License](https://img.shields.io/badge/License-MIT-239120?style=for-the-badge&logoColor=white)](https://github.com/AlexRequiemd/CrimsonSimpleImageConverter?tab=MIT-1-ov-file)
-![Status](https://img.shields.io/badge/Status-Developing-F38020?style=for-the-badge&logoColor=white)
-[![MIT License](https://img.shields.io/badge/By-Alex_S._A._Rocha_Filho-D70A53?style=for-the-badge&logoColor=white)](https://github.com/AlexRequiemd)
+![Status](https://img.shields.io/badge/Status-Complete-6600d9?style=for-the-badge&logoColor=white)
+[![Author](https://img.shields.io/badge/By-Alex_S._A._Rocha_Filho-ffe200?style=for-the-badge&logoColor=white)](https://github.com/AlexRequiemd)
 
-***Crimson Simple Image Converter is an application for extracting images from PDF documents and converting them into various formats. It supports multiple languages and themes and allows for customization of the conversion process. This project uses Python and several libraries, including Pillow and customtkinter.***
+***YTtoAudio is an application for Downloading videos from Youtube.com and converts to a audio file. This project uses Python 3.11 and several libraries, including Pydub, Pytube and CustomTKinter.***
 
-## Table of Contents
+<img src="https://github.com/user-attachments/assets/5c19b8ba-9354-4971-a8f9-558fb7006195" style="height: 64px; width:64px;"/>
+
+## Table of Contents 
 
 - [Features](#features)
 - [Architecture](#architecture)
@@ -17,25 +19,21 @@
 - [Supported Formats](#supported-formats)
 - [Setup](#setup)
   - [Install Dependencies](#install-dependencies)
+  - [Download FFMPEG](#download-ffmpeg)
   - [Folder Structure](#folder-structure)
-  - [Installer](#installer)
+  - [Windows Executable](#standalone-windows-executable)
 - [Usage](#usage)
   - [User Interface](#user-interface)
-  - [Change Language](#change-language)
-  - [Conversion Settings](#conversion-settings)
-- [Features by Tab](#features-by-tab)
 - [Demonstration](#demonstration)
 - [Screenshots](#screenshots)
 - [Contributing](#contributing)
-- [License](#license)
-- [Releases](#releases)
+- [License](https://github.com/AlexRequiemd/YTtoAudio/tree/YTtoAUDIO?tab=License-1-ov-file)
+- [Releases](https://github.com/AlexRequiemd/YTtoAudio/releases)
 
 ## Features
 
-- Extraction of images from PDF documents.
-- Conversion of images into various formats.
-- Support for multiple languages: English, Portuguese, and Spanish.
-- Light and dark themes.
+- Reading and recognizing video links from the Youtube website.
+- Conversion into various audio formats.
 - Adjustable settings, including options for handling existing files.
 - Graphical user interface using customtkinter.
 
@@ -43,63 +41,67 @@
 
 ### Files and Folders
 
-- `data/`: Contains configuration and translation files.
-  - `data.json`: General application settings.
-  - `lang_eng.json`: Translations for English.
-  - `lang_pt-br.json`: Translations for Portuguese.
-  - `lang_spa.json`: Translations for Spanish.
-- `language/`: Library responsible for managing languages and translations.
-  - `__init__.py`: Initializes the language library.
-- `app.py`: Main application file.
+- `assets/`: Contains images and fonts files for the user interface.
+- `conv.py`: Initializes conversion function.
+- `main.py`: Main application file.
 
 ### Libraries
 
-- **Pillow**: Used for image manipulation and conversion.
+- **Pydub**: Used for audio manipulation and conversion.
 - **customtkinter**: Provides custom widgets for the graphical interface.
-- **PikePDF**: Used for manipulating PDF documents.
-- **json**: Standard library for handling JSON files.
+- **Pytube**: Used for downloading YouTube videos or audio.
 
 ## Supported Formats
 
-### Input Formats
+### Output Settings
 
-- **Images**: `.png`, `.jpg`, `.jpeg`, `.gif`, `.bmp`, `.ico`, `.webp`, `.tiff`, `.tif`, `.jp2`, `.j2k`, `.jfif`
-- **PDF**: `.pdf`
-
-### Output Formats
-
-- **Images**: `.jpg`, `.png`, `.gif`, `.bmp`, `.webp`, `.ico`, `.tiff`, `.jp2`, `.pdf`, `.eps`
+- **Audio Format**: `.mp3`, `.wav`, `.ogg`.
+- **Audio Bitrate**: `320kbps`, `256kbps`, `192kbps`, `160kbps`, `128kbps`.
 
 ## Setup
 
 ### Install Dependencies
 
 #### Make sure you have the following libraries installed:
-+ **Pillow:** A library for image processing in Python, supporting various formats and basic manipulations.
++ **Pydub:** A Python library for manipulating audio files, supporting editing, format conversion, and simple effects.
 + **CustomTkinter:** An extension of Tkinter with modern, customizable widgets for graphical interfaces.
-+ **PikePDF:** A tool for PDF manipulation, such as editing and encryption, based on QPDF.
-+ **JSON:** A lightweight data exchange format; the json module converts between Python objects and JSON strings.
++ **Pytube:** A Python library for downloading YouTube videos or audio with options for resolution and filtering.
 
 ```bash
 pip install -r requirements.txt
 ```
 
-## Installer
-+ You can also install the application using the installer provided in the [Releases](https://github.com/AlexRequiemd/CrimsonSimpleImageConverter/releases) section of the repository. Download the installer from the latest release and follow the on-screen instructions to complete the installation.
+### Download FFMPEG
+***WARNING The absence of ffmpeg may affect the functioning of the software***
+
++ For the software to work properly and avoid errors, download ffmpeg from this link: [FFMPEG](https://github.com/BtbN/FFmpeg-Builds/releases/download/latest/ffmpeg-master-latest-win64-gpl.zip)
++ After downloading, extract the files, copy the files inside the path **'ffmpeg-master-latest-win64-gpl\bin\\'** and paste them into the project folder where the **main.py** file is located.
+
+## Standalone Windows Executable
++ You can also download the application executable using the link provided in the [Releases](https://github.com/AlexRequiemd/YTtoAudio/releases) section of the repository. Download the executable from the latest release and follow the instructions for the software work properly.
 
 ## Folder Structure
 ### The project should have the following folder structure:
 
 ```plaintext
-CrimsonSimpleImageConverter/
-├── data/
-│   ├── data.json
-│   ├── lang_eng.json
-│   ├── lang_pt-br.json
-│   └── lang_spa.json
-├── language/
-│   └── __init__.py
-└── app.py
+YTtoAudio/
+├── temp/
+├── assets/
+│   ├── frame_bg.png
+│   ├── icon.ico
+│   ├── label2_bg.png
+│   ├── logo.png
+│   ├── logo_bg.png
+│   ├── logo_nbg.png
+│   ├── MinervaModern_Black.otf
+│   ├── MinervaModern_Bold.otf
+│   ├── MinervaModern_Regular.otf
+│   └── root_bg.png
+├── conv.py
+├── ffmpeg.exe
+├── ffplay.exe
+├── ffprobe.exe
+└── main.py
 ```
 
 
@@ -109,95 +111,35 @@ CrimsonSimpleImageConverter/
 Run the main file to start the application:
 
 ```bash
-python app.py
+python main.py
 ```
 
 ## User Interface
-### Input:
-+ Add files or folders for extraction.
+### Format:
++ Select the preferred format.
+### Bitrate: 
++ Select the preferred bitrate.
 ### Output: 
-+ Set output options and select the output directory.
-### Log: 
-+ View the extraction and conversion log.
-### Settings: 
-+ Adjust application settings such as language and theme.
-### About: 
-+ Information about the application.
++ Select the output folder location.
+### Paste URL: 
++ Get the URL copied from the user's clipboard
+### Download: 
++ Start download and conversion.
 
-## Change Language
-The language of the interface can be changed by modifying the data.json file to reflect the desired setting:
-
-```json
-"language": "pt-br"  // or "en" for English, "spa" for Spanish
-```
-
-## Conversion Settings
-### Configure conversion options in the data.json file:
-
-```json
-"del_original": 0,  // 0: No, 1: Yes
-"open_output": 0,   // 0: No, 1: Yes
-"clean_input": 0,   // 0: No, 1: Yes
-"finish_beep": 1,   // 0: No, 1: Yes
-"finish_close": 0,  // 0: No, 1: Yes
-"output_mode": 1,   // 1: Standard mode, 2: Alternative mode
-"output_path": "",  // Output path
-"replace_option": 0,  // 0: Ask, 1: Replace, 2: Ignore, 3: Rename
-"format_option": 2   // 0: Standard format, 1: Alternative format, 2: Other format
-```
-## Features by Tab
-### Input Tab
-#### Add Files/Folder: 
-+ Load images or PDFs for extraction.
-#### Clear: 
-+ Remove selected files or folders from the list.
-#### Start: 
-+ Begin the extraction and conversion process.
-### Output Tab
-#### Output Directory: 
-+ Select where to save the converted images.
-### Options: 
-+ Configure settings for handling output, such as whether to ask, replace, ignore, or rename existing files.
-### Log Tab
-#### View Log: 
-+ Access detailed logs of the extraction and conversion process.
-### Settings Tab
-#### Language: 
-+ Change the language of the application.
-#### Theme: 
-+ Switch between light and dark themes.
-### About Tab
-#### Information: 
-+ View details about the application, including version and author information.
 ## Demonstration
 ### Check out the demonstration video of the application:
 
-<a href="https://youtu.be/gGpC1T5b-9w?si=u5Ohcwx7SsjfnIbz"> 
-<img src="https://github.com/user-attachments/assets/497e94d9-79ee-4382-92bd-9c4327c5c784" style="height: 338px; width:603px;"/>
+<a href="https://youtu.be/jYjmX5a1u80"> 
+<img src="https://github.com/user-attachments/assets/abcaf86f-78f0-44f1-8366-b99c4689c0fe" style="height: 338px; width:603px;"/>
 </a>
 
 
 ### Screenshots
 + Here are some screenshots of the application:
 
-<img src="https://github.com/user-attachments/assets/aaac4fd4-2dc7-4ec7-8f99-91d831005a9d" style="height: 250px; width:427px;"/>
+<img src="https://github.com/user-attachments/assets/26f6076d-a140-4007-b669-5471c85adcc0" style="height: 250px; width:427px;"/>
 
-<img src="https://github.com/user-attachments/assets/65a2720d-7c60-410d-bf40-1c277ad467d2" style="height: 250px; width:427px;"/>
-
-<img src="https://github.com/user-attachments/assets/4423cbe7-36b0-4183-a4fa-9bb2faae80fe" style="height: 250px; width:427px;"/>
-
-<img src="https://github.com/user-attachments/assets/fc135143-c1e1-4066-a2d2-8f2b12a40169" style="height: 250px; width:427px;"/>
-
-<img src="https://github.com/user-attachments/assets/e32ff39f-8790-422f-9194-019d08e34316" style="height: 250px; width:427px;"/>
-
-####
-
-<img src="https://github.com/user-attachments/assets/d55bc7de-8975-4d2a-add5-0daeae2c6684" style="height: 216px; width:384px;"/>
-
-####
-
-<img src="https://github.com/user-attachments/assets/ac91f822-a9ae-48da-b33a-c1239e7f4c69" style="height: 216px; width:384px;"/>
-
+<img src="https://github.com/user-attachments/assets/b97186cd-c16b-4266-9267-cf1e231e9cd8" style="height: 250px; width:427px;"/>
 
 ## Contributing
 ### Contributions are welcome! If you would like to contribute to the project, please follow these steps:
@@ -207,3 +149,4 @@ The language of the interface can be changed by modifying the data.json file to 
 + Commit your changes: git commit -am 'Add new feature'.
 + Push your branch to the remote repository: git push origin my-new-feature.
 + Open a Pull Request for review.
+
